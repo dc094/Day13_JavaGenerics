@@ -19,6 +19,17 @@ public class Maximum<T extends Comparable<T>> {
         return max;
     }
 
+    public static <T extends Comparable<T>> T findMax(List<T> arr) {
+
+        T max = arr.get(0);
+
+        for (T key : arr) {
+            if (key.compareTo(max) > 0)
+                max = key;
+        }
+        return max;
+    }
+
     public void findMaxInteger() {
         Maximum mx = new Maximum();
         System.out.println("Enter 3 integer numbers: ");
@@ -64,6 +75,11 @@ public class Maximum<T extends Comparable<T>> {
         // Maximum String ->
         mx.findMaxString();
 
+        Maximum obj = new Maximum();
+        System.out.println("---------------- UC4 -> Options ---------------");
+        System.out.println("The Maximum integer is: " + obj.findMax(Arrays.asList(12,24,36,48)));
+        System.out.println("The Maximum float is: " + obj.findMax(Arrays.asList(10.34,65.54,24.87)));
+        System.out.println("The Maximum string is: " + obj.findMax(Arrays.asList("Apple", "Peach", "Banana")));
     }
 
 }
