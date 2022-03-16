@@ -1,8 +1,11 @@
 package com.bridgelabz.generics;
 
+import javax.swing.text.html.Option;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
-public class Maximum {
+public class Maximum<T extends Comparable<T>> {
     public static <T extends Comparable<T>> T findMax(T a, T b, T c) {
 
         T max = a;
@@ -38,6 +41,17 @@ public class Maximum {
         System.out.println("Maximum float number is: " + mx.findMax(num1, num2, num3));
     }
 
+    public void findMaxString() {
+        Maximum mx = new Maximum();
+        System.out.println("Enter 3 strings: ");
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.next();
+        String str2 = sc.next();
+        String str3 = sc.next();
+
+        System.out.println("Maximum float number is: " + mx.findMax(str1, str2, str3));
+    }
+
     public static void main(String[] args) {
         Maximum mx = new Maximum();
         System.out.println("Welcome to Generic Practice Problem");
@@ -46,6 +60,9 @@ public class Maximum {
 
         // Maximum Float ->
         mx.findMaxFloat();
+
+        // Maximum String ->
+        mx.findMaxString();
 
     }
 
