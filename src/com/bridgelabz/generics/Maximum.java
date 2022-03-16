@@ -1,10 +1,8 @@
 package com.bridgelabz.generics;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
-public class Maximum<T extends Comparable<T>> {
+public class Maximum {
     public static <T extends Comparable<T>> T findMax(T a, T b, T c) {
 
         T max = a;
@@ -18,27 +16,7 @@ public class Maximum<T extends Comparable<T>> {
         return max;
     }
 
-    public static <T extends Comparable<T>> T findMax(List<T> arr) {
-
-        T max = arr.get(0);
-
-        for (T key : arr) {
-            if (key.compareTo(max) > 0)
-                max = key;
-        }
-        return max;
-    }
-
-    public static <T extends Comparable> T printMax() {
-        System.out.println("Calling findMaxMethod through printMax.......");
-
-        System.out.println("The Maximum integer is: " + findMax(Arrays.asList(12,24,36,48)));
-        System.out.println("The Maximum float is: " + findMax(Arrays.asList(10.34,65.54,24.87,76.56)));
-        System.out.println("The Maximum string is: " + findMax(Arrays.asList("Apple", "Peach", "Banana","Kiwi")));
-
-        return null;
-    }
-
+    // Take input as a integer
     public void findMaxInteger() {
         Maximum mx = new Maximum();
         System.out.println("Enter 3 integer numbers: ");
@@ -50,6 +28,7 @@ public class Maximum<T extends Comparable<T>> {
         System.out.println("Maximum integer number is: " + mx.findMax(num1, num2, num3));
     }
 
+    // Take input as a float
     public void findMaxFloat() {
         Maximum mx = new Maximum();
         System.out.println("Enter 3 float numbers: ");
@@ -61,6 +40,7 @@ public class Maximum<T extends Comparable<T>> {
         System.out.println("Maximum float number is: " + mx.findMax(num1, num2, num3));
     }
 
+    // Take input as a string
     public void findMaxString() {
         Maximum mx = new Maximum();
         System.out.println("Enter 3 strings: ");
@@ -84,14 +64,6 @@ public class Maximum<T extends Comparable<T>> {
         // Maximum String ->
         mx.findMaxString();
 
-        Maximum obj = new Maximum();
-        System.out.println("---------------- UC4 -> Options ---------------");
-        System.out.println("The Maximum integer is: " + obj.findMax(Arrays.asList(12,24,36,48)));
-        System.out.println("The Maximum float is: " + obj.findMax(Arrays.asList(10.34,65.54,24.87)));
-        System.out.println("The Maximum string is: " + obj.findMax(Arrays.asList("Apple", "Peach", "Banana")));
-
-        System.out.println("--------------- UC5 -> Find the max value using printMax method -------------");
-        printMax();
     }
 
 }
