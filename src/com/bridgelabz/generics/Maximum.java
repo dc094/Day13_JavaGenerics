@@ -1,8 +1,20 @@
 package com.bridgelabz.generics;
 
-import java.util.Scanner;
+public class Maximum<T> {
 
-public class Maximum {
+    T a;
+    T b;
+    T c;
+
+    public Maximum() {
+        super();
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
+    // Method for finding maximum value (int,float,string) -->
+
     public static <T extends Comparable<T>> T findMax(T a, T b, T c) {
 
         T max = a;
@@ -16,54 +28,12 @@ public class Maximum {
         return max;
     }
 
-    // Take input as a integer
-    public void findMaxInteger() {
-        Maximum mx = new Maximum();
-        System.out.println("Enter 3 integer numbers: ");
-        Scanner sc = new Scanner(System.in);
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int num3 = sc.nextInt();
-
-        System.out.println("Maximum integer number is: " + mx.findMax(num1, num2, num3));
-    }
-
-    // Take input as a float
-    public void findMaxFloat() {
-        Maximum mx = new Maximum();
-        System.out.println("Enter 3 float numbers: ");
-        Scanner sc = new Scanner(System.in);
-        float num1 = sc.nextFloat();
-        float num2 = sc.nextFloat();
-        float num3 = sc.nextFloat();
-
-        System.out.println("Maximum float number is: " + mx.findMax(num1, num2, num3));
-    }
-
-    // Take input as a string
-    public void findMaxString() {
-        Maximum mx = new Maximum();
-        System.out.println("Enter 3 strings: ");
-        Scanner sc = new Scanner(System.in);
-        String str1 = sc.next();
-        String str2 = sc.next();
-        String str3 = sc.next();
-
-        System.out.println("Maximum float number is: " + mx.findMax(str1, str2, str3));
-    }
-
     public static void main(String[] args) {
         Maximum mx = new Maximum();
         System.out.println("Welcome to Generic Practice Problem");
-        // Maximum Integer ->
-        mx.findMaxInteger();
-
-        // Maximum Float ->
-        mx.findMaxFloat();
-
-        // Maximum String ->
-        mx.findMaxString();
-
+        System.out.println("The Maximum integer is: " + mx.findMax(12, 24, 36));
+        System.out.println("The Maximum float is: " + mx.findMax(34.65, 25.76, 87.54));
+        System.out.println("The Maximum string is: " + mx.findMax("Apple", "Banana", "Peach"));
     }
 
 }
