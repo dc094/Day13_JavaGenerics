@@ -16,13 +16,6 @@ public class Maximum {
         return max;
     }
 
-    public static void main(String[] args) {
-        Maximum mx = new Maximum();
-        System.out.println("Welcome to Generic Practice Problem");
-        mx.findMaxInteger();
-
-    }
-
     public void findMaxInteger() {
         Maximum mx = new Maximum();
         System.out.println("Enter 3 integer numbers: ");
@@ -33,4 +26,27 @@ public class Maximum {
 
         System.out.println("Maximum integer number is: " + mx.findMax(num1, num2, num3));
     }
+
+    public void findMaxFloat() {
+        Maximum mx = new Maximum();
+        System.out.println("Enter 3 float numbers: ");
+        Scanner sc = new Scanner(System.in);
+        float num1 = sc.nextFloat();
+        float num2 = sc.nextFloat();
+        float num3 = sc.nextFloat();
+
+        System.out.println("Maximum float number is: " + mx.findMax(num1, num2, num3));
+    }
+
+    public static void main(String[] args) {
+        Maximum mx = new Maximum();
+        System.out.println("Welcome to Generic Practice Problem");
+        // Maximum Integer ->
+        mx.findMaxInteger();
+
+        // Maximum Float ->
+        mx.findMaxFloat();
+
+    }
+
 }
