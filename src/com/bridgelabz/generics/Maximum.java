@@ -1,6 +1,5 @@
 package com.bridgelabz.generics;
 
-import javax.swing.text.html.Option;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -28,6 +27,16 @@ public class Maximum<T extends Comparable<T>> {
                 max = key;
         }
         return max;
+    }
+
+    public static <T extends Comparable> T printMax() {
+        System.out.println("Calling findMaxMethod through printMax.......");
+
+        System.out.println("The Maximum integer is: " + findMax(Arrays.asList(12,24,36,48)));
+        System.out.println("The Maximum float is: " + findMax(Arrays.asList(10.34,65.54,24.87,76.56)));
+        System.out.println("The Maximum string is: " + findMax(Arrays.asList("Apple", "Peach", "Banana","Kiwi")));
+
+        return null;
     }
 
     public void findMaxInteger() {
@@ -80,6 +89,9 @@ public class Maximum<T extends Comparable<T>> {
         System.out.println("The Maximum integer is: " + obj.findMax(Arrays.asList(12,24,36,48)));
         System.out.println("The Maximum float is: " + obj.findMax(Arrays.asList(10.34,65.54,24.87)));
         System.out.println("The Maximum string is: " + obj.findMax(Arrays.asList("Apple", "Peach", "Banana")));
+
+        System.out.println("--------------- UC5 -> Find the max value using printMax method -------------");
+        printMax();
     }
 
 }
